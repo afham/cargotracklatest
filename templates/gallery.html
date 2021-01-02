@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<!-----------parallax header----------------------------->
+	<section class="parallax" id="parallax-contact">
+	  <div class="parallax-inner-contact text-center">
+	    <h1 style="color: white;font-size: 60px"><b>GALLERY</b></h1>
+	  </div>
+	</section>
+<!--------------end paallax header------------------------>
+
+
+<!----------GALLERY BODY----------------->
+<div class="container" style="padding: 2rem;">
+	<div class="row">
+		<div class="col-lg-4 img"><img src="{% static 'img/gallery/ct1.jpg' %}" class="img-fluid"></div>
+		<div class="col-lg-4 img"><img src="{% static 'img/gallery/ct2.jpg' %}" class="img-fluid"></div>
+		<div class="col-lg-4 img"><img src="{% static 'img/gallery/ct3.jpg' %}" class="img-fluid"></div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-lg-4"><img src="{% static 'img/gallery/ct4.jpg' %}" class="img-fluid"></div>
+		<div class="col-lg-4"><img src="{% static 'img/gallery/ct5.jpg' %}" class="img-fluid"></div>
+		<div class="col-lg-4"><img src="{% static 'img/gallery/ct6.jpg' %}" class="img-fluid"></div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-lg-4"><img src="{% static 'img/gallery/ct7.jpg' %}" class="img-fluid"></div>
+		<div class="col-lg-4"><img src="{% static 'img/gallery/ct8.jpg' %}" class="img-fluid"></div>
+		<div class="col-lg-4"><img src="{% static 'img/gallery/ct9.jpg' %}" class="img-fluid"></div>
+	</div>
+</div>
+
+
+<!----------end gallery body------------->
+{% endblock content %}

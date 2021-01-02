@@ -1,0 +1,131 @@
+{% load static %}
+{% static "img" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive slider/carousel</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+  
+  <link rel="stylesheet" href="{% static 'style/style.css' %}" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/classnames/2.2.6/index.min.js"></script>
+
+  
+
+</head>
+
+<body>
+
+
+
+
+<!------------ animated sticky navbar ---------------------->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'img/logo.png' %}"></a>
+  <a class="nav-link" id="num" href="#number">00966920002130 <i class="fa fa-phone-alt" aria-hidden="true"></i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'services' %}">SERVICES</a>
+        <ul class="navbar-nav">
+          <li><a class="nav-link" href="#">AIR FREIGHT</a></li>
+          <li><a class="nav-link" href="#">SEA FREIGHT</a></li>
+          <li><a class="nav-link" href="#">LAND TRANSPORT</a></li>
+          <li><a class="nav-link" href="#">RELOCATION</a></li>
+          <li><a class="nav-link" href="#">PACKING ,CRATING & LASHHING</a></li>
+          <li><a class="nav-link" href="#">GLOBAL LCL CONSOLIDATION</a></li>
+          <li><a class="nav-link" href="#">CSTOM CLEARANCE</a></li>
+          <li><a class="nav-link" href="#">LUXARY CAR RELOCATION</a></li>
+          <li><a class="nav-link" href="#">WAREHOUSING</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'gallery' %}">GALLERY</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-------------end animated sticky navbar =----------------->
+
+{% block content %}
+
+
+{% endblock content %}
+
+
+<!------footer---------------->
+
+
+<footer class="footer">
+  <div class="container-fluid padding">
+    <div class="row text-center">
+      <div class="col-lg-4">
+        <h3><b>WORKING HOURS</b></h3>
+        <hr>
+        <p>Sunday ti Thursday - 8:30 A.M - 6:00 P.M</p> 
+        <p>Friday to Sunday - CLOSED</p> 
+        
+      </div>
+      <div class="col-lg-4">
+        <img style="width: 70% ; height: auto;" src="{% static 'img/logo.png' %}">
+        <hr>
+        <p>King Khalid Road</p>
+        <p> Al-Baghdadiyah Al-Sharqiyah</p> 
+        <p>Jeddah 22235</p> 
+        <p>Saudi Arabia</p>
+      </div>
+      <div class="col-lg-4">
+        <h3><b>CONTACT US</b></h3>
+        <hr>
+        <p>Land Phone : 012 2611817</p> 
+        <p>Mobile : 00966920002130
+        <p>Email : Mohammed.anas@cargotrack.co</p>
+        <p>Sales@cargotrack.co</p>
+        <p>Info@cargotrack.co</p> 
+      </div>
+      
+    </div>
+  </div>
+</footer>
+
+<!-------end footer------------>
+
+
+
+
+
+
+<!-- Jquery needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+   
+    
+
+</body>
+</html>

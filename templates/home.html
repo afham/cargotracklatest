@@ -1,0 +1,461 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<!----------carosel slide------------->
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{% static 'img/kochi.jpg' %}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'img/hydrebad.jpg' %}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'img/europe1.jpg' %}" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'img/relocation.jpg' %}" alt="Fourth slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<!------------end carousel slide------------>
+
+
+
+
+ <!--- sticky floating quote button ---->
+
+
+<div id="feedback" data-toggle="modal" data-target="#myModal">
+        <a href="#popup1">Get a free Quote</a></div>
+
+
+<!--- animated slider --------------------->
+
+        <div class="container">
+        
+
+                 <!-- Modal //
+                    ////
+                    ///////
+                    //////-->
+          <div class="modal fade" style="margin-top: 2%" id="myModal" role="dialog">
+            <div class="modal-dialog " style="max-width: 90%;">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Get Free Quotes from Relocation Company</h4>
+                </div>
+                <div class="modal-body">
+               <!--- forms ------------------------------>
+              
+                  <form class="form-horizontal" action="" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                         <div class="col-lg-4">
+                              <div class="form-group">
+                                    <label class="control-label col-lg-12" for="movetype">Please select move type:</label>
+                                    <div class="col-lg-12">
+                                      <input type="text" class="form-control" id="movetype" name="movetype" placeholder="Select from list">
+                                    </div>
+                              </div>
+                         </div>
+                         <div class="col-lg-4">
+                             <div class="form-group">
+                                <label class="control-label col-lg-12" for="movedate">Expected moving date</label>
+                                <div class="col-lg-12">
+                                  <input type="date" class="form-control" id="movedate" name="movedate" placeholder="DD/MM/YY">
+                                </div>
+                             </div>
+                         </div>
+                         <div class="col-lg-4">
+                              <div class="form-group">
+                                    <label class="control-label col-lg-12" for="movefrom">Moving from Location</label>
+                                    <div class="col-lg-12">
+                                      <input type="text" class="form-control" id="movefrom" name="movefrom" placeholder="Type area , city name">
+                                    </div>
+                              </div>
+                         </div>
+                         
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                              <div class="form-group">
+                                    <label class="control-label col-lg-12" for="moveto">Moving to Location</label>
+                                    <div class="col-lg-12">
+                                      <input type="text" class="form-control" id="moveto" name="moveto" placeholder="Type area , city name">
+                                    </div>
+                              </div>
+                         </div>
+                         <div class="col-lg-6">
+                             <div class="form-group">
+                                <label class="control-label col-lg-12" for="waytorecieve">How do you want to recieve price quotes</label>
+                                <div class="col-lg-12">
+                                  <input type="text" class="form-control" id="waytorecieve" name="waytorecieve" placeholder="How do you want to recieve price quotes">
+                                </div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-lg-4">
+                              <div class="form-group">
+                                    <label class="control-label col-lg-12" for="name">Name</label>
+                                    <div class="col-lg-12">
+                                      <input type="text" class="form-control" id="name" name="name" placeholder="Type your name">
+                                    </div>
+                              </div>
+                         </div>
+                         <div class="col-lg-4">
+                             <div class="form-group">
+                                <label class="control-label col-lg-12" for="email">Email</label>
+                                <div class="col-lg-12">
+                                  <input type="email" class="form-control" id="email" name="email" placeholder="Type your email address">
+                                </div>
+                             </div>
+                         </div>
+                         <div class="col-lg-4">
+                              <div class="form-group">
+                                    <label class="control-label col-lg-12" for="phone">Phone</label>
+                                    <div class="col-lg-12">
+                                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Type your phone number">
+                                    </div>
+                              </div>
+                         </div>
+                     </div>
+                     <div class="row">
+                         <div class="col-lg-12">
+                              <div class="form-group">
+                                    <label class="control-label col-lg-12" for="other">Other details you may want to add</label>
+                                    <div class="col-lg-12">
+                                      <input type="text" class="form-control" id="other" name="other" placeholder="If you have any other requirements, feel free to describe them here in as much detail as you want. Or just leave us a message here to call you if its easier to explain on the phone">
+                                    </div>
+                              </div>
+                         </div>
+                     </div>
+                     <div class="form-group">        
+                          <div class="col-sm-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                          </div>
+                     </div>
+
+                  </form>
+                    <!-- end of forms ------------------------------------->
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <!-- modal ///
+                ///////
+                /
+                ////////-->
+
+        </div>
+
+    </div>
+
+
+
+
+<!--- Three Column Section -->
+
+<div class="container-fluid padding" id="cards">
+    <div class="row text-center padding " >
+        <div class="col-xs-12 col-sm-12 col-md-4" id="cards" style="padding-left: 1.5rem">
+            <i class="fas fa-truck fa-2x "></i>
+            <h3>24/7 AVAILABLE </h3>
+            <p>Air cargo is any property carried or to be carried in an aircraft. Air cargo comprises air freight, air express.</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4" id="cards">
+            <i class="fas fa-users fa-2x "></i>
+            <h3>EXPERT STAFF</h3>
+            <p>Freight transport is the physical process of transporting commodities and merchandise goods and cargo.</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4" id="cards" style="padding-right: 1.5rem">
+            <i class="fas fa-dollar-sign fa-2x"></i>
+            <h3>LOW COST</h3>
+            <p>Door to Door delivery is the most common and convenient way of shipment for the customer.</p>
+        </div>
+        
+    </div>
+    <hr class="my-4">
+
+</div>
+
+<!--- 2 column text --->
+
+<div class="container-fluid twocol">
+    <div class="row padding">
+        <div class="col-md-12 col-lg-6">
+              <h3><b>WE PROVIDE
+              WORLDWIDE FREIGHT</b></h3>
+              <br>
+
+              <p >UM.Fawaz Trading Est a global player engaged in Imports, Exports & Trading was established in 1981. CargoTrack, the forwarding division of UM.Fawaz Trading Est. was incorporated in early 1994 on humble beginnings with only 5 employees. Within a few years, CargoTrack achieved a remarkable growth in the Kingdom and expanded to various regions in the Kingdom as a world-class provider of innovative logistics and supply-chain services and solutions. Our dedicated and experienced professionals always provide you with tailor made logistics solutions, customized to your particular needs.</p>
+              <div class="row padding">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                        <ul>
+                            
+                                <li>Consumer Package Good</li>
+                                <li>Chemical Good</li>
+                                <li>Medicine & Health Support Good</li>
+                        </ul>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                          <ul>
+                                <li>Food & Bevarage</li>
+                                <li>Retail Package Good</li>
+                                <li>Energy Oil & Gas</li>
+                          </ul>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-6 " style="padding-left: 3rem" >
+          <div class="container">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wnGpDAycrnE" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+    
+</div>
+<!--------------end 2 col------------------------------------------------>
+
+
+<!----------fixed background img 8 cards------------>
+
+
+
+<section class="parallax-8cards">
+<div class="container parallax-inner" >
+  <div class="col-lg-12 text-center">
+  <h3 style="color: white"><b>OUR SERVICES</b></h3>
+  <br>
+  </div>
+  <div class="card-deck">
+    <div class="card" >
+      <img class="card-img-top " src="{% static 'img/airfreight.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h7 class="card-title">AIR FREIGHT</h7>
+    
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="{% static 'img/seafreight.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h7 class="card-title">SEA FREIGHT</h7>
+    
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="{% static 'img/landfreight1.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h7 class="card-title">LAND TRANSPORT</h7>
+        
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="{% static 'img/relocationcard1.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h7 class="card-title">RELOCATION</h7>
+        
+      </div>
+    </div>
+  </div>
+  <div class="card-deck" style="padding-top: 3rem">
+    <div class="card">
+      <img class="card-img-top" src="{% static 'img/packing1.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h7 class="card-title">PACKING, CRATING AND LASHING</h7>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="{% static 'img/gobal1.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h7 class="card-title">GOBAL LCL CONSOLIDATION</h7>
+    
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="{% static 'img/customs1.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h7 class="card-title">CUSTOMS CLEARANCE</h7>
+        
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="{% static 'img/luxury1.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h7 class="card-title">LUXURY CAR RELOCATION</h7>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!----------end fixed background img 8 cards------------>
+
+<!--- 2 column text --->
+
+<div class="container-fluid twocol" style="padding-top: 2rem">
+    <div class="row padding">
+        <div class="col-md-12 col-lg-6">
+              <h3><b>WHY YOU CHOOSE US</b></h3>
+              <br>
+
+              <p >We understand that finding a reliable logistics partner to take care of your business with so many options can be a challenge. Here are a few reasons that set us apart from the crowd.</p>
+              <div class="row padding">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                        <ul>
+                            
+                                <li>
+                                  <h5><b>RELIABLE CARRIERS</b></h5>
+                                  <p>With a comprehensive logistics network we bring enthusiasm and commitment to each delivery.</p>
+                                </li>
+                                <li>
+                                  <h5><b>PROVEN INDUSTRY EXPERTISE</b></h5>
+                                  <p>A team of dedicated professionals with the know-how of getting it there at maximum efficiency</p>
+                                </li>
+                                
+                        </ul>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                          <ul>
+                                <li>
+                                  <h5><b>A TRUSTWORTHY BUSINESS PARTNER</b></h5>
+                                  <p>Meeting and exceeding expectations of clients is the measuring stick of our success</p>
+                                </li>
+                                <li>
+                                  <h5><b>OPTIMIZED LOGISTIC NETWORK</b></h5>
+                                  <p>Transportation solutions that is versatile and provides flexibility to your business needs</p>
+                                </li>
+                          </ul>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-6 " style="padding-left: 3rem" >
+            <img src="{% static 'img/forklift.png' %}" class="img-fluid"></img>
+            
+        </div>
+        
+    </div>
+    
+</div>
+<!--------------end 2 col------------------------------------------------>  
+
+<!-------------bg image with 3 boxes------------>
+
+<section class="parallax">
+  <div class="parallax-inner text-center">
+    <h3 style="color: white;"><b>Helllllo</b></h3>
+  </div>
+</section>
+
+<!-------------end bg image with 3 boxes------------>
+
+<!---------------customer testimonials------------------>
+
+
+<head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<div class="testimonials" style="padding-top: 2rem">
+<div class="col-lg-10 offset-lg-1 pt-5 pb-5 bg-dark text-light">
+  <div class="text-center">
+  <h3>WHAT CUSTOMERS SAY ABOUT US</h3>
+  <br>
+  </div>
+  <div id="client-testimonial-carousel" class="carousel slide" data-ride="carousel" data-interval="2000" style="height:200px;">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active text-center p-4">
+        <blockquote class="blockquote text-center">
+          <p class="mb-0"><i class="fa fa-quote-left"></i> Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid.
+          </p>
+          <footer class="blockquote-footer">Albert Einstein <cite title="Source Title">genius</cite></footer>
+          <!-- Client review stars -->
+          <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+          <p class="client-review-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <i class="far fa-star"></i>
+          </p>
+        </blockquote>
+      </div>
+      <div class="carousel-item text-center p-4">
+        <blockquote class="blockquote text-center">
+          <p class="mb-0"><i class="fa fa-quote-left"></i> Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.
+          </p>
+          <footer class="blockquote-footer">Albert Einstein <cite title="Source Title">genius</cite></footer>
+          <!-- Client review stars -->
+          <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+          <p class="client-review-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </p>
+        </blockquote>
+      </div>
+      <div class="carousel-item text-center p-4">
+        <blockquote class="blockquote text-center">
+          <p class="mb-0"><i class="fa fa-quote-left"></i> A person who never made a mistake never tried anything new.
+          </p>
+          <footer class="blockquote-footer">Albert Einstein <cite title="Source Title">genius</cite></footer>
+          <!-- Client review stars -->
+          <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+          <p class="client-review-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </p>
+        </blockquote>
+      </div>
+    </div>
+    <ol class="carousel-indicators">
+      <li data-target="#client-testimonial-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#client-testimonial-carousel" data-slide-to="1"></li>
+      <li data-target="#client-testimonial-carousel" data-slide-to="2"></li>
+    </ol>
+  </div>
+</div>
+</div>
+
+
+<hr class="my-4">
+
+<!------------end cstomertestimonials ------------------>
+ 
+
+{% endblock content %}
